@@ -1,6 +1,7 @@
 
-<button (click)= "Mostrar()">Mostrar lista de alumnos</button>
-<button (click)= "OrdenarPuntos()">Ordenar alumnos por puntos</button>
+<button mat-raised-button color="warn" (click)="Mostrar()">Mostrar lista de alumnos</button>
+
+<button mat-raised-button color="primary" (click)= "OrdenarPuntos()">Ordenar alumnos por puntos</button>
 
 <div >
   <h2>Lista de alumnos</h2>
@@ -36,6 +37,6 @@
     </div>
     <button>Crear nuevo alumno</button>
 
-
   </form>
 
+  <button (click)= "GoBack()">Volver</button>

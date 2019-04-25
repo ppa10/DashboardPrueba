@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../Persona';
 import { ListaService } from '../lista.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-profesor',
@@ -16,7 +17,8 @@ export class ProfesorComponent implements OnInit {
   rol: string;
   puntos: number;
 
-  constructor(private servicioLista: ListaService) { }
+  constructor(private servicioLista: ListaService,
+              private location: Location) { }
 
   ngOnInit() {
   }
@@ -40,4 +42,9 @@ export class ProfesorComponent implements OnInit {
   Pon() {
     this.lista = this.servicioLista.PonPersona(new Persona (this.nombre, this.pass, this.rol, this.puntos));
   }
+
+  GoBack() {
+    this.location.back();
+  }
 }
+
