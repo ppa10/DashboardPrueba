@@ -8,16 +8,19 @@ import {MatChipsModule} from '@angular/material/chips';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
-import { PersonaComponent } from './persona/persona.component';
 import { ProfesorComponent } from './profesor/profesor.component';
 import { LoginComponent } from './login/login.component';
 import { AlumnoComponent } from './alumno/alumno.component';
+
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculadoraComponent,
-    PersonaComponent,
     ProfesorComponent,
     LoginComponent,
     AlumnoComponent
@@ -28,7 +31,9 @@ import { AlumnoComponent } from './alumno/alumno.component';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    // HttpModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

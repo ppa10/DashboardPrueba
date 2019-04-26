@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaService } from '../lista.service';
-import { Persona} from '../persona';
+import { Persona} from '../Clases/Persona';
 
 @Component({
   selector: 'app-login',

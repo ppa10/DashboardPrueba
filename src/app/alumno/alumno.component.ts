@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../Persona';
+import { Persona } from '../Clases/Persona';
 import { ListaService } from '../lista.service';
 import { ActivatedRoute} from '@angular/router';
 import { Location } from '@angular/common';
+import { DbServiceService } from '../db-service.service';
 
 @Component({
   selector: 'app-alumno',
@@ -15,12 +16,14 @@ export class AlumnoComponent implements OnInit {
   alumno: Persona;
 
   constructor(private servicioLista: ListaService,
+              private dbServices: DbServiceService,
               private route: ActivatedRoute,
               private location: Location) { }
 
   ngOnInit() {
     const nombre = this.route.snapshot.paramMap.get('nombre');
-    this.alumno = this.servicioLista.DamePersona(nombre);
+    this.dbServices.DamePersona(nombre)
+      .subscribe(alumno => this.alumno = alumno);
   }
 
   Cambia() {
