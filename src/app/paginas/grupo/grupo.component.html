@@ -1,61 +1,6 @@
 <h2>Mis Grupos</h2>
 <mat-divider></mat-divider>
 
-<div>
-  <p>
-    <span style="font-weight: bold;">Nombre:</span>
-    {{grupoSeleccionado.Nombre}}
-  </p>
-  <p>
-      <span style="font-weight: bold;">Descripción:</span>
-      {{grupoSeleccionado.Descripcion}}
-  </p>
-</div>
-<div>
-    <button type="button" class="btn btn-primary" (click) = EntrarEditarGrupo(); routerLink= "editarGrupo">Editar Grupo</button>
-    <button type="button" class="btn btn-success">Pasar Lista</button>
-    <button type="button" class="btn btn-warning" (click) = EntrarEquipos(); routerLink= "equiposGrupo">Equipos</button>
-    <button type="button" class="btn btn-info">Juegos</button>
-    <button type="button" class="btn btn-danger" (click)="AbrirDialogoConfirmacionBorrar()">Eliminar grupo</button>
-
-</div>
-
-
-<form>
-
-    <table align = "center" *ngIf="alumnosGrupoSeleccionado;else Aviso_no_alumnos" mat-table [dataSource]="alumnosGrupoSeleccionado" class="example-container mat-elevation-z8">
-
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Nombre Alumno Column -->
-      <ng-container matColumnDef="nombreAlumno">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let alumno"> {{alumno.Nombre}} </td>
-      </ng-container>
-
-      <!-- Primer Apellido Column -->
-      <ng-container matColumnDef="primerApellido">
-        <th mat-header-cell *matHeaderCellDef> Primer Apellido </th>
-        <td mat-cell *matCellDef="let alumno"> {{alumno.PrimerApellido}} </td>
-      </ng-container>
-
-      <!-- Segundo Apellido Column -->
-      <ng-container matColumnDef="segundoApellido">
-        <th mat-header-cell *matHeaderCellDef> Segundo Apellido </th>
-        <td mat-cell *matCellDef="let alumno"> {{alumno.SegundoApellido}} </td>
-      </ng-container>
-
-      <!-- alumnoId Column -->
-      <ng-container matColumnDef="alumnoId">
-        <th mat-header-cell *matHeaderCellDef> Identificador Alumno </th>
-        <td mat-cell *matCellDef="let alumno"> {{alumno.id}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    </table>
 
     <div>
         <ng-template #Aviso_no_alumnos>Todavía no hay alumnos en este grupo</ng-template>
@@ -64,5 +9,6 @@
     <div>
       <button mat-raised-button color="primary" (click)= "goBack()">Volver</button>
     </div>
+
 
   </form>
