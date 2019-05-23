@@ -8,3 +8,4 @@ Principalmente contendrá:
 
 #  3. Diálogo de confirmación cuando queramos borrar algo (dialogo-confirmacion.componente)
       Este componente
+HOLAaa
